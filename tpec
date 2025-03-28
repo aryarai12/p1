@@ -1,0 +1,59 @@
+GitHub::
+
+Create test1.java
+code:
+class Test1 {
+  public static void main(String[] args)
+  {
+    System.out.println("JAVA");
+  }
+};
+commit
+
+
+
+Then Git Bash::
+
+cd Desktop
+
+cd Dhruthi
+
+git init
+
+git branch -m main
+
+git remote add origin https://github.com/Dhruthi-shivani/lab2.git
+
+git config --global user.email "vvce22ise0129@vvce.ac.in"
+
+git clone  https://github.com/Dhruthi-shivani/lab2.git
+
+
+Jenkins::
+
+1)In browser: https://localhost:8081 or 8080
+  username - admin
+  password - C drive
+           - Program Files
+           - Jenkins
+           - jenkins.err file
+           - password
+
+2) Manage Jenkins - Installed plugins
+                  - git integration should be present
+                  - if not, then go to Available Plugins and install 
+                  - restart jenkins
+
+3) Dashboard - New Item
+             - Freestyle project
+             - General - GitHub Project
+                       - paste GitHub repo url (until repo name from browser url 
+                            -https://github.com/Dhruthi-shivani/lab2) 
+             - Source code management - paste same url again
+
+             - add build steps - execute as batch command
+                               - javac Test1.java
+                                 java Test1
+             - save
+
+4) Build now - check console output
